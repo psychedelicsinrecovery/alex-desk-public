@@ -1,0 +1,50 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>🔐 Privacy notice: A.L.E.X. &amp; helpdesks · A.L.E.X. · PIR®</title><meta name="description" content="A.L.E.X. — PIR®&#x27;s Discord helper and helpdesks">
+<link rel="icon" href="https://psychedelicsinrecovery.github.io/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&display=swap">
+<script>try{var t=localStorage.getItem('pir-theme');document.documentElement.dataset.theme=(t==='light'||t==='dark')?t:'dark'}catch(e){}</script>
+<style>
+:root{--bg:#0d0b16;--panel:#16122a;--fg:#ece8f7;--muted:#a59fc0;--accent:#b48cff;--accent2:#5ee6c4;--border:#2a2445}
+[data-theme=light]{--bg:#f5f3fa;--panel:#fff;--fg:#1d1830;--muted:#5d5878;--accent:#6b3fd1;--accent2:#0f8f72;--border:#e2dcf0}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:var(--accent)}header{padding:2.2rem 1.25rem 1rem;text-align:center}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;line-height:1.25}h1{font-size:2.2rem;margin:.2rem 0}
+.eyebrow{letter-spacing:.14em;text-transform:uppercase;font-size:.75rem;color:var(--muted)}
+.tag{color:var(--muted);margin:.2rem auto 1rem;max-width:42rem}
+nav{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center}
+.btn{display:inline-flex;gap:.4rem;align-items:center;padding:.55rem .9rem;border-radius:999px;border:1px solid var(--border);color:var(--fg);text-decoration:none;background:var(--panel);font-size:.92rem}
+.btn.primary{background:var(--accent);color:#fff;border-color:transparent}
+main{max-width:860px;margin:0 auto;padding:0 1.25rem 6rem}
+.card{background:var(--panel);border:1px solid var(--border);border-radius:16px;padding:1.2rem 1.4rem;margin:1rem 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:.8rem}
+.poem{font-family:Fraunces,Georgia,serif;font-style:italic;line-height:1.8;text-align:center;color:var(--fg)}
+table{border-collapse:collapse;width:100%;font-size:.93rem}td,th{border:1px solid var(--border);padding:.45rem .6rem;text-align:left;vertical-align:top}
+blockquote{border-left:3px solid var(--accent);margin:1rem 0;padding:.2rem 1rem;color:var(--muted)}
+code{background:color-mix(in srgb,var(--accent) 14%,transparent);padding:.05rem .35rem;border-radius:6px}
+footer{position:fixed;bottom:0;left:0;right:0;padding:.6rem 1rem;text-align:center;font-size:.8rem;color:var(--muted);background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(12px);border-top:1px solid var(--border)}
+footer a{color:var(--muted);margin:0 .5rem}
+</style></head><body>
+<header><div class="eyebrow">PIR® · Psychedelics In Recovery™</div><h1>🌌 A.L.E.X.</h1>
+<p class="tag"><b>Astral Logic Endpoint eXpander</b>: answers from PIR's own words, with sources, plus helpdesks that never lose a request.</p>
+<nav><a class="btn primary" href="https://discord.gg/MyprTq8w95">🎮 Join PIR's Discord</a><a class="btn" href="index.html">🏠 Home</a><a class="btn" href="howto.html">🧭 How-to</a>
+<a class="btn" href="privacy.html">🔐 Privacy</a><a class="btn" href="terms.html">📜 Terms</a>
+<a class="btn" href="#" onclick="var d=document.documentElement;d.dataset.theme=d.dataset.theme==='dark'?'light':'dark';try{localStorage.setItem('pir-theme',d.dataset.theme)}catch(e){};return false">🌗</a></nav></header>
+<main><div class="card"><h2>🔐 Privacy notice: A.L.E.X. &amp; helpdesks</h2><p><em>The detailed, step-by-step notice for PIR's Discord helper and helpdesks. PIR's org-wide privacy policy (websites, email, store, AI helpers) is at <a href="https://github.com/psychedelicsinrecovery/.github/blob/main/privacy-policy.md"><code>psychedelicsinrecovery/.github/privacy-policy.md</code></a>. Questions or deletion requests: <strong>helpdesk@psychedelicsinrecovery.org</strong>.</em></p>
+<hr />
+<h2>What A.L.E.X. can and can't see</h2>
+<ul><li>A.L.E.X. runs as a Discord <strong>application</strong> (HTTP interactions), not a user account.</li><li><strong>It can't read channels, threads or DMs.</strong> It only receives what you type into its own commands (<code>/ask</code>, <code>/litcom</code>, <code>/techcom</code>, <code>/github</code>, <code>/mod</code>, …), forms and buttons.</li><li>With every interaction, Discord sends A.L.E.X. your user ID, server and channel IDs, your roles in that server, and the text you entered.</li></ul>
+<h2>Step by step</h2>
+<h3><code>/ask</code></h3>
+<ol><li>A safety check runs first, on the text alone.<ul><li><strong>If it sounds like a crisis,</strong> you immediately get a private message with crisis resources. No AI is involved.</li><li>If PIR has set up a support role, its members get a notice in a private channel that <em>you</em> may need support. <strong>What you wrote is never included.</strong></li><li><strong>If it asks for dosing, sourcing or medical advice,</strong> you get a fixed, kind refusal.</li></ul></li><li>Otherwise, your question is matched against PIR's <strong>public</strong> materials.</li><li>The question text and the matching excerpts go to an AI model to write a sourced answer: during our pilot, open models hosted by <strong>NVIDIA</strong>; once approved by TechCom, <strong>Anthropic's Claude</strong> (API, which Anthropic does not use for training by default). <strong>Your name and Discord ID are never sent to the model.</strong></li><li>The answer appears in the channel (or privately, if you chose <code>private</code>).</li><li><strong>Nothing you typed is stored.</strong> We keep only anonymous counts, such as "a question was answered" or "👍".</li></ol>
+<h3>Helpdesk tickets</h3>
+<ol><li>You fill in a short form: subject, details, urgency.</li><li>A <strong>private thread</strong> opens that only you, the committee team and server moderators can see.</li><li>For committee desks, a record is also created in that committee's <strong>private</strong> GitHub repository:<ul><li>your subject, details and urgency;</li><li>a link to the thread;</li><li>a <strong>pseudonymous tag</strong> derived from your Discord ID with a secret key. The raw ID is never written there.</li></ul></li><li><strong>Moderation reports</strong> stay inside Discord. They're never copied to GitHub.</li><li>To check status, <code>/ticket &lt;id&gt;</code> works only for you and the committee.</li></ol>
+<h3>Web portal sign-in (when available)</h3>
+<ul><li><strong>Discord sign-in:</strong> we receive only your Discord ID and username.</li><li><strong>Email sign-in:</strong> we email a one-time link (valid 15 minutes, usable once), sent by Brevo (PIR's email provider; Resend as backup). We keep your email only to send updates about your tickets. Sessions last 7 days.</li></ul>
+<h2>Who processes data</h2>
+<table><thead><tr><th>Service</th><th>Role</th></tr></thead><tbody><tr><td>Discord</td><td>Delivers commands and messages</td></tr><tr><td>Vercel</td><td>Runs A.L.E.X.'s code (it keeps no content logs by design)</td></tr><tr><td>NVIDIA (pilot) · Anthropic (when enabled)</td><td>Writes answers from question text plus public excerpts</td></tr><tr><td>GitHub</td><td>Private committee ticket records</td></tr><tr><td>Brevo (PIR's email provider; Resend as backup)</td><td>Magic-link and ticket-update emails (portal only)</td></tr></tbody></table>
+<h2>Retention &amp; your rights</h2>
+<ul><li><code>/ask</code>: nothing stored.</li><li>Tickets: kept while useful to the committee, then archived.</li><li><strong>You can ask for your tickets to be deleted at any time</strong>: helpdesk@psychedelicsinrecovery.org.</li></ul>
+<h2>Not a crisis service</h2>
+<p>A.L.E.X. is an automated helper. In an emergency, contact local emergency services. In the US, call or text <strong>988</strong>.</p></div></main>
+<footer>🌵 <a href="https://psychedelicsinrecovery.github.io">PIR GitHub hub</a>·<a href="https://www.psychedelicsinrecovery.org">psychedelicsinrecovery.org</a>·<a href="https://psychedelicsinrecovery.github.io/changelog-astro-public/library/how-alex-works">How A.L.E.X. works</a>·<a href="https://github.com/psychedelicsinrecovery/.github/blob/main/CONTACTS.md">Contacts</a></footer>
+</body></html>
