@@ -253,3 +253,49 @@ footer .sos{color:var(--rose)}
 
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.reveal,.poem span{opacity:1;transform:none}}
 @media print{#nexus,.top,.palette,footer,.progress{display:none}body{background:#fff;color:#000}}
+
+/* ── Phosphor fill icons ── */
+.ph-fill{line-height:1;vertical-align:-.12em}
+.ph-fill.em{font-size:1.05em;color:var(--violet);margin:0 .08em}
+.lifeline .ph-fill.em{color:var(--rose)}
+.ico .ph-fill,.way .ico .ph-fill,.promise .ico .ph-fill,.desk .ico .ph-fill{font-size:1.9rem;background:linear-gradient(135deg,var(--cyan),var(--violet) 55%,var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+.stage .n .ph-fill{font-size:1.15rem;color:var(--violet)}
+.btn .ph-fill{font-size:1.15em}
+.tool .ph-fill{font-size:1rem}
+[data-theme=light] .tool .moon,:root:not([data-theme=light]) .tool .sun{display:none}
+.dot-ic{width:44px;height:44px;display:grid;place-items:center;font-size:19px;color:var(--cyan)}
+.desk .go .ph-fill{transition:transform .25s}a.desk:hover .go .ph-fill{transform:translateX(4px)}
+.title-ic{color:var(--violet)}
+.st-new{color:var(--faint)}.st-claimed{color:#5b9cff}.st-progress{color:var(--gold)}.st-done{color:var(--teal)}
+.sigil .glyph .ph-fill{font-size:1.7rem;color:var(--cyan)}
+footer .sos .ph-fill{margin-right:.2rem}
+
+/* ── painted backdrops (light and dark variants) ── */
+.hero-shell,.desk-shell{position:relative;isolation:isolate}
+.hero-bg,.desk-bg,.doc-band{position:absolute;left:0;right:0;top:0;z-index:-1;pointer-events:none;background-size:cover;background-repeat:no-repeat}
+.hero-bg{bottom:0;background-image:url(bg/hero-dark.webp);background-position:left center;opacity:.6;
+  -webkit-mask-image:linear-gradient(to bottom,#000 55%,transparent),linear-gradient(to right,#000 55%,rgba(0,0,0,.35));mask-image:linear-gradient(to bottom,#000 55%,transparent);mask-composite:intersect}
+[data-theme=light] .hero-bg{background-image:url(bg/hero-light.webp);opacity:.85}
+.desk-bg{bottom:-2rem;background-image:url(bg/desk-dark.webp);background-position:right center;opacity:.55;-webkit-mask-image:linear-gradient(to bottom,#000 50%,transparent);mask-image:linear-gradient(to bottom,#000 50%,transparent)}
+[data-theme=light] .desk-bg{background-image:url(bg/desk-light.webp);opacity:.8}
+.doc-band{height:360px;background-image:url(bg/desk-dark.webp);background-position:right 30%;opacity:.4;-webkit-mask-image:linear-gradient(to bottom,#000 30%,transparent);mask-image:linear-gradient(to bottom,#000 30%,transparent)}
+[data-theme=light] .doc-band{background-image:url(bg/doc-light.webp);opacity:.75}
+.docpage main{position:relative;isolation:isolate}
+.poem-card{isolation:isolate}
+.poem-bg{position:absolute;inset:0;z-index:-1;background:url(bg/poem-dark.webp) center 70%/cover no-repeat;opacity:.38;-webkit-mask-image:radial-gradient(ellipse at 50% 60%,#000 35%,transparent 80%);mask-image:radial-gradient(ellipse at 50% 60%,#000 35%,transparent 80%)}
+[data-theme=light] .poem-bg{background-image:url(bg/poem-light.webp);opacity:.55}
+
+/* ── portrait placements ── */
+.talk-head{display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:end;margin-bottom:2.2rem}
+.talk-head .head{margin-bottom:0}
+.discord-avatar{width:132px;height:132px;border-radius:50%;box-shadow:0 0 0 1px var(--line-strong),0 0 50px color-mix(in srgb,var(--violet) 40%,transparent);animation:breathe 7s ease-in-out infinite}
+.desks-head{display:grid;grid-template-columns:260px 1fr;gap:2.4rem;align-items:center;margin-bottom:2.2rem}
+.desks-head .head{margin-bottom:0}
+.desk-art{margin:0;position:relative}
+.desk-art img{width:100%;height:auto;border-radius:24px;border:1px solid var(--line-strong);box-shadow:var(--glow);display:block}
+.desk-art::after{content:"";position:absolute;inset:-12px;border-radius:30px;z-index:-1;background:conic-gradient(from 0deg,var(--gold),var(--violet),var(--cyan),var(--gold));filter:blur(24px);opacity:.35}
+@media (max-width:760px){.talk-head,.desks-head{grid-template-columns:1fr}.discord-avatar{width:96px;height:96px}.desk-art{max-width:260px}}
+.palette li .e{width:1.4rem;text-align:center;color:var(--violet);font-size:1.05rem}
+.hero-bg{opacity:.5}
+:root:not([data-theme=light]) .hero .lede,:root:not([data-theme=light]) .hero .acro,:root:not([data-theme=light]) .hero .hint{text-shadow:0 1px 14px rgba(6,5,14,.95),0 0 3px rgba(6,5,14,.7)}
+[data-theme=light] .hero .lede{text-shadow:0 1px 12px rgba(255,255,255,.9)}

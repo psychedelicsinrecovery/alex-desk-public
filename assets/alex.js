@@ -106,23 +106,23 @@
 
   /* ── "/" quick-jump palette ── */
   var items = (window.ALEX_PALETTE || []).concat([
-    { e: '🆘', t: 'Need help right now? Crisis resources', k: 'help', href: 'https://psychedelicsinrecovery.github.io/alex-desk-public/#lifeline' },
-    { e: '🌌', t: 'A.L.E.X. home', k: 'page', href: 'https://psychedelicsinrecovery.github.io/alex-desk-public/' },
-    { e: '🧭', t: 'How to use A.L.E.X. and the helpdesks', k: 'page', href: 'https://psychedelicsinrecovery.github.io/alex-desk-public/howto.html' },
-    { e: '🔐', t: 'Privacy notice', k: 'page', href: 'https://psychedelicsinrecovery.github.io/alex-desk-public/privacy.html' },
-    { e: '📜', t: 'Terms of service', k: 'page', href: 'https://psychedelicsinrecovery.github.io/alex-desk-public/terms.html' },
-    { e: '📜', t: 'LitCom desk', k: 'desk', href: 'https://psychedelicsinrecovery.github.io/litcom-desk-public/' },
-    { e: '💻', t: 'TechCom desk', k: 'desk', href: 'https://psychedelicsinrecovery.github.io/techcom-desk-public/' },
-    { e: '🐙', t: 'GitHubDesk', k: 'desk', href: 'https://psychedelicsinrecovery.github.io/github-desk-public/' },
-    { e: '📣', t: 'PR desk', k: 'desk', href: 'https://psychedelicsinrecovery.github.io/pr-desk-public/' },
-    { e: '💬', t: 'Copy /ask', k: 'copy', copy: '/ask' },
-    { e: '🎫', t: 'Copy /techcom', k: 'copy', copy: '/techcom' },
-    { e: '📜', t: 'Copy /litcom', k: 'copy', copy: '/litcom' },
-    { e: '🛡️', t: 'Copy /mod', k: 'copy', copy: '/mod' },
-    { e: '🎮', t: "Join PIR's Discord", k: 'link', href: 'https://discord.gg/MyprTq8w95' },
-    { e: '🌵', t: 'PIR® GitHub hub', k: 'link', href: 'https://psychedelicsinrecovery.github.io/' },
-    { e: '🌐', t: 'psychedelicsinrecovery.org', k: 'link', href: 'https://www.psychedelicsinrecovery.org' },
-    { e: '🌗', t: 'Toggle light / dark', k: 'action', run: function () { setTheme(root.dataset.theme === 'light' ? 'dark' : 'light'); } }
+    { e: 'lifebuoy', t: 'Need help right now? Crisis resources', k: 'help', href: 'https://psychedelicsinrecovery.github.io/alex-desk-public/#lifeline' },
+    { e: 'planet', t: 'A.L.E.X. home', k: 'page', href: 'https://psychedelicsinrecovery.github.io/alex-desk-public/' },
+    { e: 'compass', t: 'How to use A.L.E.X. and the helpdesks', k: 'page', href: 'https://psychedelicsinrecovery.github.io/alex-desk-public/howto.html' },
+    { e: 'lock-key', t: 'Privacy notice', k: 'page', href: 'https://psychedelicsinrecovery.github.io/alex-desk-public/privacy.html' },
+    { e: 'scroll', t: 'Terms of service', k: 'page', href: 'https://psychedelicsinrecovery.github.io/alex-desk-public/terms.html' },
+    { e: 'scroll', t: 'LitCom desk', k: 'desk', href: 'https://psychedelicsinrecovery.github.io/litcom-desk-public/' },
+    { e: 'desktop', t: 'TechCom desk', k: 'desk', href: 'https://psychedelicsinrecovery.github.io/techcom-desk-public/' },
+    { e: 'github-logo', t: 'GitHubDesk', k: 'desk', href: 'https://psychedelicsinrecovery.github.io/github-desk-public/' },
+    { e: 'megaphone', t: 'PR desk', k: 'desk', href: 'https://psychedelicsinrecovery.github.io/pr-desk-public/' },
+    { e: 'chat-circle-dots', t: 'Copy /ask', k: 'copy', copy: '/ask' },
+    { e: 'ticket', t: 'Copy /techcom', k: 'copy', copy: '/techcom' },
+    { e: 'scroll', t: 'Copy /litcom', k: 'copy', copy: '/litcom' },
+    { e: 'shield-check', t: 'Copy /mod', k: 'copy', copy: '/mod' },
+    { e: 'discord-logo', t: "Join PIR's Discord", k: 'link', href: 'https://discord.gg/MyprTq8w95' },
+    { e: 'house', t: 'PIR® GitHub hub', k: 'link', href: 'https://psychedelicsinrecovery.github.io/' },
+    { e: 'globe', t: 'psychedelicsinrecovery.org', k: 'link', href: 'https://www.psychedelicsinrecovery.org' },
+    { e: 'circle-half', t: 'Toggle light / dark', k: 'action', run: function () { setTheme(root.dataset.theme === 'light' ? 'dark' : 'light'); } }
   ]);
   var pal = document.createElement('div'); pal.className = 'palette'; pal.setAttribute('role', 'dialog'); pal.setAttribute('aria-modal', 'true'); pal.setAttribute('aria-label', 'Jump anywhere');
   pal.innerHTML = '<div class="box"><input type="text" placeholder="Jump to a section, desk or page… or copy a command" aria-label="Search" aria-controls="pal-list" autocomplete="off"><ul id="pal-list" role="listbox"></ul><div class="foot"><span><kbd>↑</kbd><kbd>↓</kbd> move</span><span><kbd>↵</kbd> open</span><span><kbd>esc</kbd> close</span></div></div>';
@@ -133,7 +133,7 @@
     var q = inp.value.trim().toLowerCase();
     shown = items.map(function (it) { return { it: it, s: score(q, it.t + ' ' + it.k) }; }).filter(function (x) { return x.s; }).sort(function (a, b) { return b.s - a.s; }).map(function (x) { return x.it; });
     sel = Math.min(sel, Math.max(0, shown.length - 1));
-    list.innerHTML = shown.map(function (it, i) { return '<li role="option" id="pal-' + i + '" aria-selected="' + (i === sel) + '"><span class="e">' + it.e + '</span>' + it.t.replace(/</g, '&lt;') + '<span class="k">' + it.k + '</span></li>'; }).join('') || '<li>Nothing matches. Try “desk”, “privacy” or “ask”.</li>';
+    list.innerHTML = shown.map(function (it, i) { return '<li role="option" id="pal-' + i + '" aria-selected="' + (i === sel) + '"><span class="e"><i class="ph-fill ph-' + it.e + '" aria-hidden="true"></i></span>' + it.t.replace(/</g, '&lt;') + '<span class="k">' + it.k + '</span></li>'; }).join('') || '<li>Nothing matches. Try “desk”, “privacy” or “ask”.</li>';
     inp.setAttribute('aria-activedescendant', 'pal-' + sel);
     var on = $('[aria-selected=true]', list); if (on) on.scrollIntoView({ block: 'nearest' });
   };
