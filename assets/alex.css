@@ -299,3 +299,34 @@ footer .sos .ph-fill{margin-right:.2rem}
 .hero-bg{opacity:.5}
 :root:not([data-theme=light]) .hero .lede,:root:not([data-theme=light]) .hero .acro,:root:not([data-theme=light]) .hero .hint{text-shadow:0 1px 14px rgba(6,5,14,.95),0 0 3px rgba(6,5,14,.7)}
 [data-theme=light] .hero .lede{text-shadow:0 1px 12px rgba(255,255,255,.9)}
+
+/* ── web desk ── */
+.portal{max-width:880px}
+.field{display:flex;flex-direction:column;gap:.4rem;margin:0 0 1rem;border:0;padding:0;min-width:0}
+.field>span{font:600 .72rem var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.field input,.field select,.field textarea{font:inherit;color:var(--fg);background:var(--panel-solid);border:1px solid var(--line-strong);border-radius:12px;padding:.8rem .95rem;width:100%;transition:border-color .2s,box-shadow .2s}
+.field textarea{resize:vertical;min-height:7rem;line-height:1.55}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--violet);box-shadow:0 0 0 4px color-mix(in srgb,var(--violet) 20%,transparent)}
+.field-row{display:flex;gap:.8rem;align-items:flex-end;flex-wrap:wrap}.field-row .field{margin-bottom:0}.field.grow{flex:1 1 260px}
+.seg>div{display:flex;flex-wrap:wrap;gap:.4rem}
+.seg label{display:inline-flex;align-items:center;gap:.45rem;padding:.65rem .9rem;border:1px solid var(--line-strong);border-radius:12px;background:var(--panel-solid);cursor:pointer;font-size:.93rem}
+.seg label:has(input:checked){border-color:var(--violet);background:color-mix(in srgb,var(--violet) 14%,var(--panel-solid))}
+.seg input{accent-color:var(--violet)}
+.form-msg{min-height:1.4em;margin:.8rem 0 0;color:var(--teal);font-size:.93rem}.form-msg.bad{color:var(--rose)}
+.who-bar{display:flex;justify-content:space-between;align-items:center;gap:1rem;margin-bottom:1rem;color:var(--muted)}
+.tabs{display:flex;gap:.35rem;margin-bottom:1rem;padding:.3rem;border:1px solid var(--line);border-radius:14px;background:var(--panel);width:fit-content}
+.tabs button{all:unset;cursor:pointer;padding:.55rem 1rem;border-radius:10px;font-weight:600;font-size:.93rem;color:var(--muted)}
+.tabs button[aria-selected=true]{background:color-mix(in srgb,var(--violet) 18%,var(--panel-solid));color:var(--fg)}
+.tabs button:focus-visible{outline:2px solid var(--cyan)}
+.tickets{display:grid;gap:.8rem}
+.ticket summary{display:flex;align-items:center;gap:.8rem;flex-wrap:wrap;cursor:pointer;list-style:none}
+.ticket summary::-webkit-details-marker{display:none}
+.ticket .tid{font:600 .8rem var(--mono);color:var(--violet)}.ticket .when{margin-left:auto;font-size:.82rem}
+.st-chip{font:600 .72rem var(--mono);padding:.22rem .55rem;border-radius:999px;border:1px solid var(--line-strong);text-transform:capitalize}
+.st-chip.st-new .ph-fill{color:var(--faint)}.st-chip.st-claimed .ph-fill{color:#5b9cff}.st-chip.st-in-progress .ph-fill{color:var(--gold)}.st-chip.st-resolved .ph-fill{color:var(--teal)}
+.thread{display:grid;gap:.6rem;margin:1.1rem 0}
+.msg{padding:.75rem .95rem;border-radius:14px;background:var(--panel-solid);border:1px solid var(--line);max-width:88%}
+.msg.you{margin-left:auto;background:color-mix(in srgb,var(--violet) 12%,var(--panel-solid))}
+.msg .from{display:block;font:600 .68rem var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--teal);margin-bottom:.25rem}
+.msg.you .from{color:var(--violet)}
+.reply-form{display:flex;gap:.6rem;align-items:flex-end}.reply-form textarea{flex:1;font:inherit;color:var(--fg);background:var(--panel-solid);border:1px solid var(--line-strong);border-radius:12px;padding:.7rem .9rem}

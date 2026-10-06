@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Web desk · A.L.E.X. · PIR®</title>
+<meta name="description" content="Open and follow a PIR® helpdesk ticket on the web. Password-free sign-in by email link.">
+<meta name="theme-color" content="#06050e">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png"><link rel="icon" type="image/png" sizes="64x64" href="assets/favicon-64.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta property="og:title" content="Web desk · A.L.E.X. · PIR®"><meta property="og:description" content="Open and follow a PIR® helpdesk ticket on the web. Password-free sign-in by email link.">
+<meta property="og:image" content="https://psychedelicsinrecovery.github.io/alex-desk-public/assets/alex-social.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="627">
+<meta property="og:type" content="website"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://psychedelicsinrecovery.github.io/alex-desk-public/assets/alex-social.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,400&family=JetBrains+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/fill/style.css">
+<script>try{var t=localStorage.getItem('pir-theme');document.documentElement.dataset.theme=(t==='light'||t==='dark')?t:'dark'}catch(e){document.documentElement.dataset.theme='dark'}</script>
+<link rel="stylesheet" href="assets/alex.css">
+</head>
+<body class="deskpage portalpage">
+<a class="skip" href="#main">Skip to content</a>
+<div class="progress" aria-hidden="true"></div>
+<canvas id="nexus" aria-hidden="true"></canvas>
+<header class="top"><div class="wrap">
+  <a class="brand" href="index.html"><img src="assets/favicon-64.png" alt="" width="34" height="34">A.L.E.X. <small>PIR®</small></a>
+  <nav aria-label="Main"><a href="index.html" class="">Home</a><a href="index.html#inside" class="opt">Inside an answer</a><a href="index.html#desks" class="opt">Helpdesks</a><a href="portal.html" class="opt" aria-current=page>Web desk</a><a href="howto.html" class="">How-to</a><a href="privacy.html" class="opt">Privacy</a></nav>
+  <button class="tool" data-palette aria-label="Jump anywhere (press slash)"><i class="ph-fill ph-magnifying-glass" aria-hidden="true"></i><span class="lbl">Jump</span><kbd>/</kbd></button>
+  <button class="tool" data-theme-toggle aria-label="Toggle light and dark theme"><i class="ph-fill ph-moon-stars moon" aria-hidden="true"></i><i class="ph-fill ph-sun sun" aria-hidden="true"></i></button>
+</div></header>
+<main id="main">
+
+<div class="desk-shell"><div class="desk-bg" aria-hidden="true"></div>
+<div class="wrap desk-hero">
+  <div class="sigil" aria-hidden="true"><div class="ring"></div><img src="assets/alex-icon-512.png" alt=""><span class="glyph"><i class="ph-fill ph-envelope-simple" aria-hidden="true"></i></span></div>
+  <div>
+    <div class="eyebrow">PIR® web helpdesk</div>
+    <h1>The web desk</h1>
+    <p class="lede" style="margin:.4rem 0 0">Not on Discord? Open and follow a ticket right here. Sign in with a one-time email link: <b>no password, no account, and we don't keep your address.</b></p>
+  </div>
+</div></div>
+
+<section style="padding-top:1rem"><div class="wrap portal">
+  <div id="p-off" class="card" hidden><h2 style="font-size:1.5rem"><i class="ph-fill ph-hourglass-medium" aria-hidden="true"></i> Email sign-in is almost ready</h2>
+    <p class="muted">Until it's switched on, open a ticket in <a href="https://discord.gg/MyprTq8w95">PIR's Discord</a> or email <a href="mailto:helpdesk@psychedelicsinrecovery.org">helpdesk@psychedelicsinrecovery.org</a>.</p></div>
+
+  <form id="p-signin" class="card spot" hidden novalidate>
+    <div class="eyebrow">Step 1 of 2</div><h2 style="font-size:1.6rem;margin:.6rem 0 .4rem">Sign in with your email</h2>
+    <p class="muted" style="margin-top:0">We'll send a link that works once, for 15 minutes.</p>
+    <div class="field-row"><label class="field grow"><span>Email address</span><input type="email" name="email" autocomplete="email" required placeholder="you@example.org"></label>
+    <button class="btn primary" type="submit"><i class="ph-fill ph-paper-plane-tilt" aria-hidden="true"></i> Send me a link</button></div>
+    <p class="form-msg" role="status"></p>
+  </form>
+
+  <div id="p-sent" class="card" hidden><div class="eyebrow">Step 2 of 2</div>
+    <h2 style="font-size:1.6rem;margin:.6rem 0 .4rem"><i class="ph-fill ph-envelope-open" aria-hidden="true"></i> Check your email</h2>
+    <p class="muted">If that address can receive mail, a sign-in link is on its way. Open it on this device. Nothing arrived? Check spam, or <a href="#" data-restart>try again</a>.</p></div>
+
+  <div id="p-app" hidden>
+    <div class="who-bar"><span><i class="ph-fill ph-user-circle" aria-hidden="true"></i> Signed in as <b id="p-who"></b></span><button class="tool" id="p-out" type="button"><i class="ph-fill ph-sign-out" aria-hidden="true"></i><span class="lbl">Sign out</span></button></div>
+    <div class="tabs" role="tablist">
+      <button role="tab" aria-selected="true" data-tab="open"><i class="ph-fill ph-ticket" aria-hidden="true"></i> Open a ticket</button>
+      <button role="tab" aria-selected="false" data-tab="mine"><i class="ph-fill ph-list-checks" aria-hidden="true"></i> My tickets</button>
+    </div>
+    <form id="p-open" class="card spot" novalidate data-panel="open">
+      <div class="grid g2">
+        <label class="field"><span>Helpdesk</span><select name="desk"><option value="litcom">LitCom</option><option value="techcom">TechCom</option><option value="github">GitHubDesk</option><option value="pr">PR Desk</option></select></label>
+        <fieldset class="field seg"><span>This is a…</span><div>
+          <label><input type="radio" name="type" value="problem" checked> Problem or request</label>
+          <label><input type="radio" name="type" value="idea"> Idea or feedback</label></div></fieldset>
+      </div>
+      <label class="field"><span>Subject</span><input name="subject" maxlength="100" required placeholder="A short summary"></label>
+      <label class="field"><span>Details</span><textarea name="details" rows="6" maxlength="4000" required placeholder="What happened, or what would you like? Links help."></textarea></label>
+      <div class="field-row"><label class="field"><span>Urgency (optional)</span><select name="urgency"><option value="">—</option><option>low</option><option>medium</option><option>high</option></select></label>
+      <button class="btn primary" type="submit"><i class="ph-fill ph-paper-plane-tilt" aria-hidden="true"></i> Open ticket</button></div>
+      <p class="note"><i class="ph-fill ph-lock-key" aria-hidden="true"></i> Please don't share passwords or other sensitive information. Not medical advice, and not a crisis line: in crisis, call or text 988 (US).</p>
+      <p class="form-msg" role="status"></p>
+    </form>
+    <div id="p-mine" data-panel="mine" hidden><div id="p-list" class="tickets"></div></div>
+  </div>
+</div></section>
+<section id="lifeline" style="padding-top:0"><div class="wrap"><div class="card lifeline" id="p-crisis" hidden></div></div></section>
+
+</main>
+<footer><div class="wrap">
+  <div><a class="brand" href="index.html" style="margin-bottom:.6rem"><img src="assets/favicon-64.png" alt="" width="34" height="34">A.L.E.X.</a>
+    <span>Astral Logic Endpoint eXpander: PIR®'s Discord helper. Answers from PIR's own words, and helpdesks that never lose a request.</span></div>
+  <div><b>A.L.E.X.</b><a href="howto.html">How-to</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="https://psychedelicsinrecovery.github.io/changelog-astro-public/library/how-alex-works">How A.L.E.X. works</a></div>
+  <div><b>Desks</b><a href="https://psychedelicsinrecovery.github.io/litcom-desk-public/">LitCom</a><a href="https://psychedelicsinrecovery.github.io/techcom-desk-public/">TechCom</a><a href="https://psychedelicsinrecovery.github.io/github-desk-public/">GitHubDesk</a><a href="https://psychedelicsinrecovery.github.io/pr-desk-public/">PR Desk</a></div>
+  <div><b>PIR®</b><a href="https://discord.gg/MyprTq8w95">Discord</a><a href="https://www.psychedelicsinrecovery.org">psychedelicsinrecovery.org</a><a href="https://psychedelicsinrecovery.github.io">GitHub hub</a><a href="https://github.com/psychedelicsinrecovery/.github/blob/main/CONTACTS.md">Contacts</a><a class="sos" href="https://psychedelicsinrecovery.github.io/alex-desk-public/#lifeline"><i class="ph-fill ph-lifebuoy" aria-hidden="true"></i> Crisis resources</a></div>
+</div></footer>
+<script>window.ALEX_PALETTE=[{"e": "envelope-simple", "t": "Web desk: sign in", "k": "section", "href": "#p-signin"}]</script><script>
+(function(){
+var API="https://alex-desk-theta.vercel.app/api/portal", KEY='alex-web-session', $=function(s){return document.querySelector(s)};
+function show(id){['p-off','p-signin','p-sent','p-app'].forEach(function(x){$('#'+x).hidden=x!==id})}
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function md(s){return esc(s).replace(/\*\*(.+?)\*\*/g,'<b>$1</b>').replace(/&lt;(https?:[^&]+)&gt;/g,'<a href="$1">$1</a>').replace(/\n/g,'<br>')}
+function session(){try{return localStorage.getItem(KEY)}catch(e){return null}}
+function call(body){var h={'content-type':'application/json'},s=session();if(s)h.authorization='Bearer '+s;
+  return fetch(API,{method:'POST',headers:h,body:JSON.stringify(body)}).then(function(r){return r.json().then(function(j){if(!r.ok){if(r.status===401&&body.action!=='verify'&&body.action!=='request'){try{localStorage.removeItem(KEY)}catch(e){}}throw new Error(j.error||'Something went wrong.')}return j})})}
+function msg(form,t,bad){var m=form.querySelector('.form-msg');m.textContent=t||'';m.className='form-msg'+(bad?' bad':'')}
+var hash=new URLSearchParams(location.hash.slice(1)), deskPre=hash.get('desk')||location.hash.replace(/^#/,'').split('&')[0];
+function tab(n){document.querySelectorAll('[data-tab]').forEach(function(b){b.setAttribute('aria-selected',b.dataset.tab===n)});document.querySelectorAll('[data-panel]').forEach(function(p){p.hidden=p.dataset.panel!==n});if(n==='mine')load()}
+document.querySelectorAll('[data-tab]').forEach(function(b){b.onclick=function(){tab(b.dataset.tab)}});
+function signedIn(who){show('p-app');$('#p-who').textContent=who||'you';var sel=$('#p-open select[name=desk]');if(deskPre&&sel.querySelector('option[value="'+deskPre+'"]'))sel.value=deskPre}
+function chip(st){var m={'new':'circle','claimed':'circle','in-progress':'circle','resolved':'check-circle'};return '<span class="st-chip st-'+st+'"><i class="ph-fill ph-'+(m[st]||'circle')+'"></i> '+st.replace('-',' ')+'</span>'}
+function load(){var L=$('#p-list');L.innerHTML='<p class="muted">Loading your tickets…</p>';
+  call({action:'mine'}).then(function(j){if(!j.tickets.length){L.innerHTML='<div class="card"><p class="muted" style="margin:0">No tickets yet. Open one in the other tab.</p></div>';return}
+    L.innerHTML=j.tickets.map(function(t){return '<details class="card ticket"><summary><span class="tid">'+esc(t.id)+'</span><b>'+esc(t.title)+'</b>'+chip(t.status)+'<span class="muted when">'+new Date(t.updated).toLocaleDateString()+'</span></summary>'+
+      '<div class="thread">'+(t.messages.length?t.messages.map(function(m){return '<div class="msg '+m.from+'"><span class="from">'+(m.from==='you'?'You':'Committee')+'</span><div>'+md(m.text)+'</div></div>'}).join(''):'<p class="muted">No replies yet. The committee has been notified.</p>')+'</div>'+
+      '<form class="reply-form" data-id="'+esc(t.id)+'"><textarea rows="3" maxlength="4000" placeholder="Write a reply…" required></textarea><button class="btn" type="submit"><i class="ph-fill ph-paper-plane-tilt"></i> Reply</button></form></details>'}).join('');
+    L.querySelectorAll('.reply-form').forEach(function(f){f.onsubmit=function(e){e.preventDefault();var ta=f.querySelector('textarea');if(!ta.value.trim())return;f.querySelector('button').disabled=true;
+      call({action:'reply',id:f.dataset.id,text:ta.value}).then(function(){load()}).catch(function(x){alert(x.message)})}});
+  }).catch(function(x){if(!session()){show('p-signin')}else L.innerHTML='<p class="form-msg bad">'+esc(x.message)+'</p>'})}
+$('#p-signin').onsubmit=function(e){e.preventDefault();var f=e.target,email=f.email.value.trim();if(!/^\S+@\S+\.\S+$/.test(email)){msg(f,'Please enter a valid email address.',true);return}
+  msg(f,'Sending…');call({action:'request',email:email,desk:deskPre||''}).then(function(){show('p-sent')}).catch(function(x){msg(f,x.message,true)})};
+document.querySelector('[data-restart]').onclick=function(e){e.preventDefault();show('p-signin')};
+$('#p-out').onclick=function(){try{localStorage.removeItem(KEY)}catch(e){}show('p-signin')};
+$('#p-open').onsubmit=function(e){e.preventDefault();var f=e.target;if(!f.subject.value.trim()||!f.details.value.trim()){msg(f,'Please add a subject and some details.',true);return}
+  msg(f,'Opening your ticket…');call({action:'open',desk:f.desk.value,type:f.querySelector('[name=type]:checked').value,subject:f.subject.value,details:f.details.value,urgency:f.urgency.value})
+  .then(function(j){if(j.crisis){var c=$('#p-crisis');c.innerHTML=md(j.crisis);c.hidden=false;c.scrollIntoView({behavior:'smooth'});msg(f,'');return}
+    msg(f,'Ticket '+j.id+' is open. The committee has been notified, and replies will show under My tickets.');f.subject.value='';f.details.value='';})
+  .catch(function(x){msg(f,x.message,true)})};
+var token=hash.get('login');
+call({action:'config'}).then(function(cfg){
+  if(token){history.replaceState(null,'',location.pathname+(deskPre?'#'+deskPre:''));return call({action:'verify',token:token}).then(function(j){try{localStorage.setItem(KEY,j.session);localStorage.setItem(KEY+'-who',j.who)}catch(e){}signedIn(j.who)}).catch(function(x){show('p-signin');msg($('#p-signin'),x.message,true)})}
+  if(session()){var who='';try{who=localStorage.getItem(KEY+'-who')}catch(e){}signedIn(who);return}
+  show(cfg.emailSignIn?'p-signin':'p-off')}).catch(function(){show('p-off')});
+})();
+</script><script src="assets/alex.js" defer></script>
+</body>
+</html>
