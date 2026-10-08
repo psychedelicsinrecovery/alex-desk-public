@@ -355,3 +355,8 @@ footer .sos .ph-fill{margin-right:.2rem}
 .raster span{padding:1rem 1.2rem;display:flex;gap:.4rem;align-items:center}
 .raster span .ph-fill{margin-left:auto;color:var(--violet)}
 .lantern{font:italic 400 clamp(1.1rem,2.2vw,1.45rem)/1.8 var(--serif);text-align:center;margin:3rem auto 0;max-width:40rem;border:0;color:var(--muted)}
+
+/* footer icons */
+footer a .ph-fill{opacity:.7;margin-right:.35rem;font-size:.95em;vertical-align:-.1em}
+footer a:hover .ph-fill{opacity:1;color:var(--cyan)}
+#engine .rasters .raster img{aspect-ratio:1200/627;object-fit:cover}
