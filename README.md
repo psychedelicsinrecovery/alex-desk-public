@@ -1,10 +1,66 @@
-# 🌌 A.L.E.X. — public portal (`alex-desk-public`)
+# 🌌 A.L.E.X.: PIR®'s helper and helpdesks
 
-> 🌐 **Live:** https://psychedelicsinrecovery.github.io/alex-desk-public/
+> 🌐 **Live site:** https://psychedelicsinrecovery.github.io/alex-desk-public/ · 💬 **Discord:** https://discord.gg/MyprTq8w95
 >
-> The public face of **A.L.E.X.**, PIR®'s (Psychedelics In Recovery™) Discord helper and helpdesks:
-> the home page, 🧭 how-to, 🔐 privacy notice, and 📜 terms of service.
+> *A lantern, not the path.*
 
-🤖 **Generated, so don't edit here.** The source lives in the private
-[`alex-desk`](https://github.com/psychedelicsinrecovery/alex-desk) repo (`site/build.py`, `PRIVACY-POLICY.md`,
-`TERMS-OF-SERVICE.md`, `tenants/pir/howto/`). Rebuild there and publish here.
+**A.L.E.X.** (*Astral Logic Endpoint eXpander*, she/they) is the helper of **Psychedelics In Recovery™ (PIR®)**, a
+12-step fellowship for people integrating psychedelic experiences into recovery. She answers questions from PIR®'s
+own website and literature, **always with sources**, and opens private helpdesk tickets so the right trusted
+servants can help. This repository is her public website.
+
+## 💬 What A.L.E.X. does
+
+| You want to… | Do this |
+|---|---|
+| Ask anything about PIR® | Type `/ask` in Discord, or tap **Ask A.L.E.X.** in the 🗨️ask-alex channel. Answers come with links to the page they came from. |
+| Get help from a committee | `/techcom` (websites, email, Zoom) · `/litcom` (literature) · `/github` (PIR®'s GitHub) · `/pr` (outreach, brand, De Vine News) · `/mod` (moderators, privately) |
+| Get help without Discord | The [web helpdesk](https://psychedelicsinrecovery.github.io/alex-desk-public/portal.html): sign in with a one-time email link, no password or account |
+| Check on a ticket | `/ticket LIT-12` in Discord, or *My tickets* on the web helpdesk |
+
+## 🛡️ Safety and privacy, by design
+- **Safety comes before AI.** Crisis, dosing and medical questions are caught by plain, predictable rules **before**
+  any language model runs. A.L.E.X. shares crisis resources and never gives dosing, medical or legal advice.
+- **Sources, not guesses.** Answers are drawn from PIR®'s own pages and cite them. If nothing fits, she says so and
+  offers a ticket.
+- **Nothing kept.** No chat logs, no profiles, no ads. Ticket requesters are a scrambled tag, never a Discord ID or an
+  email address. Details: the [privacy notice](https://psychedelicsinrecovery.github.io/alex-desk-public/privacy.html).
+
+## 🗺️ What's on the site
+
+| Page | What's there |
+|---|---|
+| [Home](https://psychedelicsinrecovery.github.io/alex-desk-public/) | Meet A.L.E.X., see inside an answer, the helpdesks, and an alexandrine poem |
+| [How-to](https://psychedelicsinrecovery.github.io/alex-desk-public/howto.html) | Using A.L.E.X. and the helpdesks, step by step |
+| [Web desk](https://psychedelicsinrecovery.github.io/alex-desk-public/portal.html) | Open and follow tickets without Discord |
+| [Roadmap](https://psychedelicsinrecovery.github.io/alex-desk-public/roadmap.html) | Where we've been and where we're going |
+| [Sustainability](https://psychedelicsinrecovery.github.io/alex-desk-public/sustainability.html) | What it runs on, what it costs, who owns it, how it could be turned off |
+| [Privacy](https://psychedelicsinrecovery.github.io/alex-desk-public/privacy.html) · [Terms](https://psychedelicsinrecovery.github.io/alex-desk-public/terms.html) | The promises, in plain language |
+| [Site map](https://psychedelicsinrecovery.github.io/alex-desk-public/map.html) | Everything in one place (lost? any missing page guesses where you meant to go) |
+
+**The helpdesk portals:** [LitCom](https://psychedelicsinrecovery.github.io/litcom-desk-public/) ·
+[TechCom](https://psychedelicsinrecovery.github.io/techcom-desk-public/) ·
+[GitHubDesk](https://psychedelicsinrecovery.github.io/github-desk-public/) ·
+[PR Desk](https://psychedelicsinrecovery.github.io/pr-desk-public/)
+
+## ⚙️ How it's built
+- **Engine:** [Alexandrina](https://drasticstatic.github.io/alexandrina-public-preview/), a small, open, reusable
+  question-answering and helpdesk engine. Each community is a "library"; A.L.E.X. is PIR®'s.
+- **Runs on:** Vercel (Discord commands, buttons, web desk), GitHub Pages (these pages), GitHub Issues & Discussions
+  (tickets), and a small Google Cloud server for the 🗨️ask-alex conversation.
+- **Cost to PIR®:** nothing today; see [Sustainability](https://psychedelicsinrecovery.github.io/alex-desk-public/sustainability.html).
+- **Plain-English walkthrough:** [How A.L.E.X. works](https://psychedelicsinrecovery.github.io/changelog-astro-public/library/how-alex-works).
+
+## 🙋 Feedback and service
+Ideas, bugs or corrections: type `/techcom` in Discord or use the web helpdesk. Want to help build it? The Tech
+Committee welcomes volunteers, and no coding is needed: https://service.psychedelicsinrecovery.org/tech-committee/
+
+🆘 **In crisis?** Call or text **988** (US) or see https://www.psychedelicsinrecovery.org/crisis-resources/.
+A.L.E.X. isn't a crisis line.
+
+## 🛠️ About this repository
+These pages are generated by the Tech Committee's build in PIR®'s private `alex-desk` repository (`site/build.py`,
+the privacy notice, terms and how-to) and published here automatically, so changes are made at the source.
+
+<sub>PIR® and Psychedelics In Recovery™ are marks of Psychedelics In Recovery, a 501(c)(3) nonprofit. Artwork of
+A.L.E.X. and Alexandrina is PIR®'s; please ask the PR Committee before reusing it.</sub>
