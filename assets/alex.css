@@ -86,7 +86,7 @@ section{padding:5.5rem 0;scroll-margin-top:calc(var(--nav) + 10px)}
 .reveal.in{opacity:1;transform:none}
 
 /* ── hero ── */
-.hero{display:grid;grid-template-columns:1.08fr .92fr;gap:3.5rem;align-items:center;padding:5.5rem 0 4rem;min-height:calc(100vh - var(--nav))}
+.hero{display:grid;grid-template-columns:1.08fr .92fr;gap:3.5rem;align-items:center;padding-top:5.5rem;padding-bottom:4rem;min-height:calc(100vh - var(--nav))}
 @media (max-width:900px){.hero{grid-template-columns:1fr;padding-top:3rem;min-height:0;gap:2.5rem}}
 .hero h1{font-size:clamp(3.4rem,9vw,6.6rem);font-weight:800;letter-spacing:-.035em;margin:.8rem 0 .5rem;line-height:.95;
   background:linear-gradient(110deg,var(--fg) 15%,var(--violet) 45%,var(--cyan) 70%,var(--gold));background-size:200% 100%;
@@ -189,7 +189,7 @@ a.desk:hover{transform:translateY(-4px);box-shadow:var(--glow);border-color:var(
 .lifeline p:first-child{font-size:1.05rem}
 
 /* ── documents ── */
-.doc{display:grid;grid-template-columns:240px minmax(0,1fr);gap:3rem;padding:3.5rem 0 5rem}
+.doc{display:grid;grid-template-columns:240px minmax(0,1fr);gap:3rem;padding-top:3.5rem;padding-bottom:5rem}
 @media (max-width:900px){.doc{grid-template-columns:1fr;gap:1rem}}
 .toc{position:sticky;top:calc(var(--nav) + 1.5rem);align-self:start;font-size:.88rem;max-height:calc(100vh - var(--nav) - 3rem);overflow:auto}
 .toc b{display:block;font:600 .7rem var(--mono);letter-spacing:.18em;text-transform:uppercase;color:var(--teal);margin-bottom:.7rem}
@@ -209,7 +209,7 @@ a.desk:hover{transform:translateY(-4px);box-shadow:var(--glow);border-color:var(
 .prose .lead{font-size:1.14rem;color:var(--muted)}
 
 /* ── desk portal ── */
-.desk-hero{display:grid;grid-template-columns:auto 1fr;gap:2rem;align-items:center;padding:4.5rem 0 2.5rem}
+.desk-hero{display:grid;grid-template-columns:auto 1fr;gap:2rem;align-items:center;padding-top:4.5rem;padding-bottom:2.5rem}
 @media (max-width:700px){.desk-hero{grid-template-columns:1fr;gap:1.2rem}}
 .sigil{position:relative;width:150px;height:150px}
 .sigil .ring{position:absolute;inset:0;border-radius:50%;padding:3px;background:conic-gradient(from 90deg,var(--gold),var(--violet),var(--cyan),var(--gold));animation:turn 16s linear infinite}
@@ -364,3 +364,11 @@ footer a:hover .ph-fill{opacity:1;color:var(--cyan)}
 /* radios/checkboxes inside .field (Safari drew them as full-width boxes over their labels) */
 .field input[type=radio],.field input[type=checkbox]{width:auto;padding:0;margin:0;border:0;background:none;box-shadow:none;flex:none;-webkit-appearance:auto;appearance:auto;inline-size:1.05rem;block-size:1.05rem}
 .seg label{white-space:nowrap}
+
+/* raster bentos with links inside */
+.bento .raster{padding:0;display:flex;flex-direction:column;overflow:hidden}
+.bento .raster-img{display:block}.bento .raster-img img{width:100%;height:auto;display:block;aspect-ratio:1200/627;object-fit:cover;border-bottom:1px solid var(--line)}
+.bento .raster-body{padding:1rem 1.2rem 1.2rem;display:flex;flex-direction:column;gap:.55rem;color:var(--fg)}
+.bento .raster-link{display:flex;align-items:center;gap:.45rem;color:var(--muted);text-decoration:none;font-size:.95rem}
+.bento .raster-link u{text-decoration-color:color-mix(in srgb,var(--violet) 55%,transparent);text-underline-offset:3px;color:var(--fg)}
+.bento .raster-link:hover{color:var(--fg)}.bento .raster-link .ph-fill:last-child{margin-left:auto;color:var(--violet)}
