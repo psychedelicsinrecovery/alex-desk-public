@@ -360,3 +360,7 @@ footer .sos .ph-fill{margin-right:.2rem}
 footer a .ph-fill{opacity:.7;margin-right:.35rem;font-size:.95em;vertical-align:-.1em}
 footer a:hover .ph-fill{opacity:1;color:var(--cyan)}
 #engine .rasters .raster img{aspect-ratio:1200/627;object-fit:cover}
+
+/* radios/checkboxes inside .field (Safari drew them as full-width boxes over their labels) */
+.field input[type=radio],.field input[type=checkbox]{width:auto;padding:0;margin:0;border:0;background:none;box-shadow:none;flex:none;-webkit-appearance:auto;appearance:auto;inline-size:1.05rem;block-size:1.05rem}
+.seg label{white-space:nowrap}

@@ -42,7 +42,7 @@
   <div id="p-off" class="card" hidden><h2 style="font-size:1.5rem"><i class="ph-fill ph-hourglass-medium" aria-hidden="true"></i> Email sign-in is almost ready</h2>
     <p class="muted">Until it's switched on, open a ticket in <a href="https://discord.gg/MyprTq8w95">PIR's Discord</a> or email <a href="mailto:helpdesk@psychedelicsinrecovery.org">helpdesk@psychedelicsinrecovery.org</a>.</p></div>
 
-  <form id="p-signin" class="card spot" hidden novalidate>
+  <form id="p-signin" class="card" hidden novalidate>
     <div class="eyebrow">Step 1 of 2</div><h2 style="font-size:1.6rem;margin:.6rem 0 .4rem">Sign in with your email</h2>
     <p class="muted" style="margin-top:0">We'll send a link that works once, for 15 minutes.</p>
     <div class="field-row"><label class="field grow"><span>Email address</span><input type="email" name="email" autocomplete="email" required placeholder="you@example.org"></label>
@@ -60,7 +60,7 @@
       <button role="tab" aria-selected="true" data-tab="open"><i class="ph-fill ph-ticket" aria-hidden="true"></i> Open a ticket</button>
       <button role="tab" aria-selected="false" data-tab="mine"><i class="ph-fill ph-list-checks" aria-hidden="true"></i> My tickets</button>
     </div>
-    <form id="p-open" class="card spot" novalidate data-panel="open">
+    <form id="p-open" class="card" novalidate data-panel="open">
       <div class="grid g2">
         <label class="field"><span>Helpdesk</span><select name="desk"><option value="litcom">LitCom</option><option value="techcom">TechCom</option><option value="github">GitHubDesk</option><option value="pr">PR Desk</option></select></label>
         <fieldset class="field seg"><span>This is a…</span><div>
@@ -100,7 +100,12 @@ function msg(form,t,bad){var m=form.querySelector('.form-msg');m.textContent=t||
 var hash=new URLSearchParams(location.hash.slice(1)), deskPre=hash.get('desk')||location.hash.replace(/^#/,'').split('&')[0];
 function tab(n){document.querySelectorAll('[data-tab]').forEach(function(b){b.setAttribute('aria-selected',b.dataset.tab===n)});document.querySelectorAll('[data-panel]').forEach(function(p){p.hidden=p.dataset.panel!==n});if(n==='mine')load()}
 document.querySelectorAll('[data-tab]').forEach(function(b){b.onclick=function(){tab(b.dataset.tab)}});
-function signedIn(who){show('p-app');$('#p-who').textContent=who||'you';var sel=$('#p-open select[name=desk]');if(deskPre&&sel.querySelector('option[value="'+deskPre+'"]'))sel.value=deskPre}
+// "I'd like to serve" links (#desk=techcom&serve=1) survive the email sign-in by waiting in this browser until used.
+var SERVE=KEY+'-serve';if(hash.get('serve')){try{localStorage.setItem(SERVE,deskPre||'')}catch(e){}}
+function prefillServe(){var d=null;try{d=localStorage.getItem(SERVE)}catch(e){}if(d===null)return;try{localStorage.removeItem(SERVE)}catch(e){}
+  var f=$('#p-open'),sel=f.desk;if(d&&sel.querySelector('option[value="'+d+'"]'))sel.value=d;var name=sel.options[sel.selectedIndex].text;
+  f.subject.value="I'd like to serve with "+name;f.details.value="A little about me (a first name or alias is fine), what I'd like to help with, and when I'm usually available:\n\n";tab('open');f.details.focus()}
+function signedIn(who){show('p-app');$('#p-who').textContent=who||'you';var sel=$('#p-open select[name=desk]');if(deskPre&&sel.querySelector('option[value="'+deskPre+'"]'))sel.value=deskPre;prefillServe()}
 function chip(st){var m={'new':'circle','claimed':'circle','in-progress':'circle','resolved':'check-circle'};return '<span class="st-chip st-'+st+'"><i class="ph-fill ph-'+(m[st]||'circle')+'"></i> '+st.replace('-',' ')+'</span>'}
 function load(){var L=$('#p-list');L.innerHTML='<p class="muted">Loading your tickets…</p>';
   call({action:'mine'}).then(function(j){if(!j.tickets.length){L.innerHTML='<div class="card"><p class="muted" style="margin:0">No tickets yet. Open one in the other tab.</p></div>';return}

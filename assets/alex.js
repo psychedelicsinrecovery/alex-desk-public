@@ -79,7 +79,8 @@
     c.addEventListener('pointermove', function (e) { var r = c.getBoundingClientRect(); c.style.setProperty('--mx', (e.clientX - r.left) + 'px'); c.style.setProperty('--my', (e.clientY - r.top) + 'px'); });
   });
   var portal = $('.portal');
-  if (portal && !reduce && matchMedia('(pointer:fine)').matches) {
+  // The tilt is for the home page's orb only: never tilt anything that holds a form (the web desk shares the class).
+  if (portal && !portal.querySelector('form') && !document.body.classList.contains('portalpage') && !reduce && matchMedia('(pointer:fine)').matches) {
     addEventListener('pointermove', function (e) {
       var rx = (e.clientY / innerHeight - .5) * -8, ry = (e.clientX / innerWidth - .5) * 10;
       portal.style.transform = 'perspective(900px) rotateX(' + rx + 'deg) rotateY(' + ry + 'deg)';
