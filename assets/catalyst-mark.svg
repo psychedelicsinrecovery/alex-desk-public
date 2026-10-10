@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="C.A.T.A.L.Y.S.T. mark" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+  <!-- One-color mark for watermarks and small sizes: inherits currentColor; set opacity where it's used. -->
+  <circle cx="256" cy="256" r="226" stroke-width="12"/>
+  <path d="M256 30 V128 M256 364 V378" stroke-width="10"/>
+  <path d="M256 140 L380 246 L256 352 L132 246 Z" stroke-width="14"/>
+  <path d="M176 246 Q256 184 336 246 Q256 308 176 246 Z" stroke-width="11"/>
+  <circle cx="256" cy="246" r="24" fill="currentColor" stroke="none"/>
+  <circle cx="126.1" cy="181" r="22" stroke-width="10"/>
+  <circle cx="385.9" cy="181" r="22" stroke-width="10"/>
+  <circle cx="256" cy="406" r="22" stroke-width="10"/>
+  <path d="M256 428 C236 444 206 452 178.7 468.4 M256 428 C276 444 306 452 333.3 468.4" stroke-width="9"/>
+</svg>
