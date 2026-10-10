@@ -372,3 +372,10 @@ footer a:hover .ph-fill{opacity:1;color:var(--cyan)}
 .bento .raster-link{display:flex;align-items:center;gap:.45rem;color:var(--muted);text-decoration:none;font-size:.95rem}
 .bento .raster-link u{text-decoration-color:color-mix(in srgb,var(--violet) 55%,transparent);text-underline-offset:3px;color:var(--fg)}
 .bento .raster-link:hover{color:var(--fg)}.bento .raster-link .ph-fill:last-child{margin-left:auto;color:var(--violet)}
+
+/* web desk: volunteer entry points */
+.serve-note{margin:1rem 0 0;color:var(--muted);font-size:.92rem;display:flex;gap:.45rem;align-items:baseline;flex-wrap:wrap}
+.serve-note .ph-fill{color:var(--gold, #f5b942)}
+.linklike{background:none;border:0;padding:0;font:inherit;color:var(--fg);text-decoration:underline;text-decoration-color:color-mix(in srgb,var(--violet) 55%,transparent);text-underline-offset:3px;cursor:pointer}
+.tabs .tab-serve{margin-left:auto;background:none;border:1px dashed var(--line-strong);border-radius:12px;padding:.55rem .9rem;color:var(--fg);font:inherit;cursor:pointer;display:inline-flex;gap:.4rem;align-items:center}
+.tabs .tab-serve:hover{border-color:var(--violet)}

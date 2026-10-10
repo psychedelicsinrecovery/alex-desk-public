@@ -48,6 +48,7 @@
     <div class="field-row"><label class="field grow"><span>Email address</span><input type="email" name="email" autocomplete="email" required placeholder="you@example.org"></label>
     <button class="btn primary" type="submit"><i class="ph-fill ph-paper-plane-tilt" aria-hidden="true"></i> Send me a link</button></div>
     <p class="form-msg" role="status"></p>
+    <p class="serve-note"><i class="ph-fill ph-hand-heart" aria-hidden="true"></i> <b>Want to volunteer?</b> <button type="button" class="linklike" data-serve>I'd like to serve</button>: sign in and we'll open a short volunteer form for the committee you pick.</p>
   </form>
 
   <div id="p-sent" class="card" hidden><div class="eyebrow">Step 2 of 2</div>
@@ -59,6 +60,7 @@
     <div class="tabs" role="tablist">
       <button role="tab" aria-selected="true" data-tab="open"><i class="ph-fill ph-ticket" aria-hidden="true"></i> Open a ticket</button>
       <button role="tab" aria-selected="false" data-tab="mine"><i class="ph-fill ph-list-checks" aria-hidden="true"></i> My tickets</button>
+      <button type="button" class="tab-serve" data-serve><i class="ph-fill ph-hand-heart" aria-hidden="true"></i> I'd like to serve</button>
     </div>
     <form id="p-open" class="card" novalidate data-panel="open">
       <div class="grid g2">
@@ -105,6 +107,10 @@ var SERVE=KEY+'-serve';if(hash.get('serve')){try{localStorage.setItem(SERVE,desk
 function prefillServe(){var d=null;try{d=localStorage.getItem(SERVE)}catch(e){}if(d===null)return;try{localStorage.removeItem(SERVE)}catch(e){}
   var f=$('#p-open'),sel=f.desk;if(d&&sel.querySelector('option[value="'+d+'"]'))sel.value=d;var name=sel.options[sel.selectedIndex].text;
   f.subject.value="I'd like to serve with "+name;f.details.value="A little about me (a first name or alias is fine), what I'd like to help with, and when I'm usually available:\n\n";tab('open');f.details.focus()}
+// The "I'd like to serve" buttons: signed in → prefill now; not yet → remember it through the email link.
+document.querySelectorAll('[data-serve]').forEach(function(b){b.onclick=function(){
+  var sel=$('#p-open select[name=desk]');try{localStorage.setItem(SERVE,sel?sel.value:'')}catch(e){}
+  if(!$('#p-app').hidden){prefillServe()}else{var m=$('#p-signin .form-msg');m.textContent="Great! Sign in below, and the volunteer form will be waiting.";m.className='form-msg';$('#p-signin input[name=email]').focus()}}});
 function signedIn(who){show('p-app');$('#p-who').textContent=who||'you';var sel=$('#p-open select[name=desk]');if(deskPre&&sel.querySelector('option[value="'+deskPre+'"]'))sel.value=deskPre;prefillServe()}
 function chip(st){var m={'new':'circle','claimed':'circle','in-progress':'circle','resolved':'check-circle'};return '<span class="st-chip st-'+st+'"><i class="ph-fill ph-'+(m[st]||'circle')+'"></i> '+st.replace('-',' ')+'</span>'}
 function load(){var L=$('#p-list');L.innerHTML='<p class="muted">Loading your tickets…</p>';
