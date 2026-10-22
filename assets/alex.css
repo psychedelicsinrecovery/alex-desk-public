@@ -217,6 +217,12 @@ a.desk:hover{transform:translateY(-4px);box-shadow:var(--glow);border-color:var(
 .sigil img{position:absolute;inset:8px;width:calc(100% - 16px);height:calc(100% - 16px);border-radius:50%;object-fit:cover}
 .sigil .glyph{position:absolute;right:-6px;bottom:-6px;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;font-size:1.8rem;background:var(--panel-solid);border:1px solid var(--line-strong);box-shadow:var(--glow)}
 .desk-hero h1{font-size:clamp(2.5rem,6vw,4rem);font-weight:800;letter-spacing:-.03em;margin:.5rem 0 .4rem}
+/* The desks' primary action ("Open PIR's Discord") read faint against the desk's night sky: a ring,
+   a lift and a brighter gradient make it unmistakable in both lights (first a desk-local fix on
+   gsr-desk-public, 2026-10-17). */
+.desk-hero .btn.primary{box-shadow:0 0 0 2px rgba(241,237,251,.4),0 6px 20px rgba(6,5,14,.55);filter:brightness(1.14) saturate(1.12);font-weight:700}
+[data-theme="light"] .desk-hero .btn.primary{box-shadow:0 0 0 2px rgba(43,33,86,.35),0 6px 20px rgba(43,33,86,.25)}
+.desk-hero .btn.primary:hover{filter:brightness(1.2) saturate(1.15)}
 .lifecycle{display:flex;flex-wrap:wrap;gap:.4rem;align-items:center;font:600 .78rem var(--mono)}
 .lifecycle span{padding:.3rem .6rem;border-radius:999px;border:1px solid var(--line-strong);background:var(--panel-solid)}
 .lifecycle i{color:var(--faint);font-style:normal}
