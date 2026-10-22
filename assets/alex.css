@@ -278,6 +278,11 @@ footer .sos .ph-fill{margin-right:.2rem}
 
 /* ── painted backdrops (light and dark variants) ── */
 .hero-shell,.desk-shell{position:relative;isolation:isolate}
+/* The home hero's halo and ring (and their tilt) reach past a phone's edge, and a long crisis URL
+   didn't wrap: both made the page scroll sideways below 1100px. Clip the glow at the band's edge
+   (clip, not hidden, so nothing becomes a scroll container) and let long links wrap. */
+.hero-shell{overflow-x:clip}
+.lifeline a{overflow-wrap:anywhere}
 .hero-bg,.desk-bg,.doc-band{position:absolute;left:0;right:0;top:0;z-index:-1;pointer-events:none;background-size:cover;background-repeat:no-repeat}
 .hero-bg{bottom:0;background-image:url(bg/hero-dark.webp);background-position:left center;opacity:.6;
   -webkit-mask-image:linear-gradient(to bottom,#000 55%,transparent),linear-gradient(to right,#000 55%,rgba(0,0,0,.35));mask-image:linear-gradient(to bottom,#000 55%,transparent);mask-composite:intersect}
